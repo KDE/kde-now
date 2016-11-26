@@ -11,6 +11,7 @@ find_package(KF5Config REQUIRED)
 find_package(KF5CoreAddons REQUIRED)
 find_package(KF5Service REQUIRED)
 
+include(ECMAddTests)
 include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -18,6 +19,7 @@ include(KDECompilerSettings)
 include(GenerateExportHeader)
 include(ECMInstallIcons)
 
+option(WITH_TESTS "Enable building of unit tests" ON)
 
 include_directories(
     ${CMAKE_SOURCE_DIR}
@@ -25,10 +27,20 @@ include_directories(
     ${CMAKE_BINARY_DIR}/src
 )
 
+if(WITH_TESTS)
+  enable_testing()
+endif(WITH_TESTS)
+
+
 add_subdirectory(src)
 add_subdirectory(plugins)
 add_subdirectory(qml)
 add_subdirectory(plasmoid)
+if(WITH_TESTS)
+  add_subdirectory(tests)
+endif(WITH_TESTS)
+
+
 
 # Space for other includes like src, libs etc
 

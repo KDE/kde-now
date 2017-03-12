@@ -20,6 +20,7 @@
 #include "restaurantreservation.h"
 #include "src/singletonfactory.h"
 #include "restaurantadaptor.h"
+#include "parser.h"
 
 #include <QtCore/QDateTime>
 #include <QtCore/QStandardPaths>
@@ -35,7 +36,7 @@ K_PLUGIN_FACTORY_WITH_JSON( KdeNowPluginFactory,
 
 
 RestaurantReservation::RestaurantReservation(QObject* parent, const QVariantList& args)
-                                    : AbstractReservationPlugin(parent, args)
+                                    : AbstractPlugin(parent, args)
 {
     new RestaurantAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -60,7 +61,15 @@ QString RestaurantReservation::plugin() const
 
 void RestaurantReservation::start()
 {
-    foreach(QVariantMap map, m_maps) {
+     Parser parser;
+     QList< QVariantMap > listOfMap;
+     listOfMap = parser.parse(m_html); // setHtml() stores "htmlDoc" in m_html @ processor.h
+     //qDebug() << "\n\nlistOfMap = " << listOfMap;
+     if (listOfMap.isEmpty()){
+          qDebug() << "listOfMap is empty";
+          return;
+    }
+    foreach(QVariantMap map, listOfMap) {
         if (map["@type"] == "FoodEstablishmentReservation") {
             extract(map);
         }

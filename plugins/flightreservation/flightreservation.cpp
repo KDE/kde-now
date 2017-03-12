@@ -20,6 +20,7 @@
 #include "flightreservation.h"
 #include "src/singletonfactory.h"
 #include "flightadaptor.h"
+#include "parser.h"
 
 #include <QtCore/QDateTime>
 #include <QtCore/QDebug>
@@ -37,7 +38,7 @@ K_PLUGIN_FACTORY_WITH_JSON( KdeNowPluginFactory,
 
 
 FlightReservation::FlightReservation(QObject* parent, const QVariantList& args)
-                                    : AbstractReservationPlugin(parent, args)
+                                    : AbstractPlugin(parent, args)
 {
     new FlightAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -62,7 +63,15 @@ QString FlightReservation::plugin() const
 
 void FlightReservation::start()
 {
-    foreach(QVariantMap map, m_maps) {
+     Parser parser;
+     QList< QVariantMap > listOfMap;
+     listOfMap = parser.parse(m_html); // setHtml() stores "htmlDoc" in m_html @ processor.h
+     //qDebug() << "\n\nlistOfMap = " << listOfMap;
+      if (listOfMap.isEmpty()){
+          qDebug() << "listOfMap is empty";
+          return;
+    }
+    foreach(QVariantMap map, listOfMap) {
         if (map["@type"] == "FlightReservation") {
             extract(map);
         }
@@ -208,6 +217,7 @@ void FlightReservation::recordsInDatabase()
     else {
         qDebug() << "Fetched Records from Table Flight Successfully";
     }
+    qDebug() << dataQuery.next() << endl;
 
     while(dataQuery.next()) {
         QVariantMap map;

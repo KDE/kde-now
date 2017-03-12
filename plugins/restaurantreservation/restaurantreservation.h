@@ -20,14 +20,14 @@
 #ifndef RESTAURANTRESERVATION_H
 #define RESTAURANTRESERVATION_H
 
-#include "src/abstractreservationplugin.h"
+#include "src/abstractplugin.h"
 
 #include <QtCore/QDate>
 #include <QtCore/QTime>
 #include <QtCore/QStringList>
 #include <QtSql/QSqlDatabase>
 
-class RestaurantReservation : public AbstractReservationPlugin
+class RestaurantReservation : public AbstractPlugin
 {
         Q_OBJECT
         Q_CLASSINFO("D-Bus Interface", "org.kde.kdenow.restaurant");

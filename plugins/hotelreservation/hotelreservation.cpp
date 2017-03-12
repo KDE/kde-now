@@ -20,6 +20,7 @@
 #include "hotelreservation.h"
 #include "src/singletonfactory.h"
 #include "hoteladaptor.h"
+#include "parser.h"
 
 #include <QtCore/QDateTime>
 #include <QtCore/QStandardPaths>
@@ -35,7 +36,7 @@ K_PLUGIN_FACTORY_WITH_JSON( KdeNowPluginFactory,
 
 
 HotelReservation::HotelReservation(QObject* parent, const QVariantList& args)
-                                    : AbstractReservationPlugin(parent, args)
+                                    : AbstractPlugin(parent, args)
 {
     new HotelAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -60,7 +61,15 @@ QString HotelReservation::plugin() const
 
 void HotelReservation::start()
 {
-    foreach(QVariantMap map, m_maps) {
+     Parser parser;
+     QList< QVariantMap > listOfMap;
+     listOfMap = parser.parse(m_html); // setHtml() stores "htmlDoc" in m_html @ processor.h
+     //qDebug() << "\n\nlistOfMap = " << listOfMap;
+     if (listOfMap.isEmpty()){
+          qDebug() << "listOfMap is empty";
+          return;
+    }
+    foreach(QVariantMap map, listOfMap) {
         if (map["@type"] == "LodgingReservation") {
             extract(map);
         }

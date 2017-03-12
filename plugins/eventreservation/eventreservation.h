@@ -20,7 +20,7 @@
 #ifndef EVENTRESERVATION_H
 #define EVENTRESERVATION_H
 
-#include "src/abstractreservationplugin.h"
+#include "src/abstractplugin.h"
 
 #include <QtCore/QDate>
 #include <QtCore/QTime>
@@ -28,7 +28,7 @@
 #include <QtCore/QVariantMap>
 #include <QtSql/QSqlDatabase>
 
-class EventReservation : public AbstractReservationPlugin
+class EventReservation : public AbstractPlugin
 {
         Q_OBJECT
         Q_CLASSINFO("D-Bus Interface", "org.kde.kdenow.event");

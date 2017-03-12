@@ -19,6 +19,7 @@
 
 #include "eventreservation.h"
 #include "eventadaptor.h"
+#include "parser.h"
 
 #include <QtCore/QList>
 #include <QtCore/QDateTime>
@@ -35,7 +36,7 @@ K_PLUGIN_FACTORY_WITH_JSON( KdeNowPluginFactory,
 
 
 EventReservation::EventReservation(QObject* parent, const QVariantList& args)
-                                    : AbstractReservationPlugin(parent, args)
+                                    : AbstractPlugin(parent, args)
 {
     new EventAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -60,7 +61,16 @@ QString EventReservation::plugin() const
 
 void EventReservation::start()
 {
-    foreach(QVariantMap map, m_maps) {
+    Parser parser;
+     QList< QVariantMap > listOfMap;
+     listOfMap = parser.parse(m_html); // setHtml() stores "htmlDoc" in m_html @ processor.h
+     //qDebug() << "\n\nlistOfMap = " << listOfMap;
+     //qDebug() << "m_html: \n" << m_html;
+     if (listOfMap.isEmpty()){
+          qDebug() << "listOfMap is empty";
+          return;
+    }
+    foreach(QVariantMap map, listOfMap) {
         if (map["@type"] == "EventReservation") {
             extract(map);
         }

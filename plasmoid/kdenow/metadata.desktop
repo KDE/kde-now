@@ -1,6 +1,16 @@
 [Desktop Entry]
 Name=KDE Now
+Name[nl]=KDE Now
+Name[pl]=KDE Now
+Name[pt]=KDE Now
+Name[uk]=KDE Now
+Name[x-test]=xxKDE Nowxx
 Comment=Provides a common Plasmoid for displaying various kinds of Reservation
+Comment[nl]=Levert een gezamenlijke Plasmoid voor het tonen van verschillende soorten Reservetringen
+Comment[pl]=Dostarcza wspólny Plazmoid do wyświetlania różnych rodzajów rezerwacji
+Comment[pt]=Oferece um Plasmóide comum para mostrar vários tipos de reservas
+Comment[uk]=Забезпечує роботу загального плазмоїда для показу різного типу бронювань
+Comment[x-test]=xxProvides a common Plasmoid for displaying various kinds of Reservationxx
 
 Icon=klipper
 Type=Service

@@ -9,6 +9,7 @@ X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-License=GPL
 ServiceTypes=KDENow/Plugin
 Name=Event Extractor
+Name[it]=Estrattore di eventi
 Name[nl]=Extractor van afspraken/gebeurtenissen
 Name[pl]=Wydobywanie wydarzeń
 Name[pt]=Extracção de Eventos

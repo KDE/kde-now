@@ -9,6 +9,7 @@ X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-License=GPL
 ServiceTypes=KDENow/Plugin
 Name=Flight Extractor
+Name[ca]=Extractor de vols
 Name[it]=Estrattore di voli
 Name[nl]=Extractor van vluchten
 Name[pl]=Wydobywanie lotów

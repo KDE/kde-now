@@ -9,6 +9,7 @@ X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-License=GPL
 ServiceTypes=KDENow/Plugin
 Name=Hotel Extractor
+Name[ca]=Extractor d'hotels
 Name[it]=Estrattore di hotel
 Name[nl]=Extractor van hotels
 Name[pl]=Wydobywanie hoteli

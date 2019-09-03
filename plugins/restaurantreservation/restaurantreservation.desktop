@@ -10,6 +10,7 @@ X-KDE-PluginInfo-License=GPL
 ServiceTypes=KDENow/Plugin
 Name=Restaurant Extractor
 Name[ca]=Extractor de restaurants
+Name[es]=Extractor de restaurantes
 Name[it]=Estrattore di ristoranti
 Name[nl]=Extractor van restaurants
 Name[pl]=Wydobywanie restauracji

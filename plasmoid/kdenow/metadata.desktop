@@ -2,6 +2,7 @@
 Name=KDE Now
 Name[ca]=KDE Now
 Name[cs]=KDE Now
+Name[es]=KDE Now
 Name[it]=KDE Now
 Name[nl]=KDE Now
 Name[pl]=KDE Now
@@ -12,6 +13,7 @@ Name[uk]=KDE Now
 Name[x-test]=xxKDE Nowxx
 Comment=Provides a common Plasmoid for displaying various kinds of Reservation
 Comment[ca]=Proporciona un plasmoide comú per mostrar classes diferents de reserves
+Comment[es]=Proporciona un plasmoide común en el que mostrar varios tipos de reservas
 Comment[it]=Fornisce un normale plasmoide per visualizzare vari tipi di prenotazioni
 Comment[nl]=Levert een gezamenlijke Plasmoid voor het tonen van verschillende soorten Reservetringen
 Comment[pl]=Dostarcza wspólny Plazmoid do wyświetlania różnych rodzajów rezerwacji

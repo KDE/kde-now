@@ -11,6 +11,7 @@ ServiceTypes=KDENow/Plugin
 Name=Hotel Extractor
 Name[ca]=Extractor d'hotels
 Name[es]=Extractor de hoteles
+Name[et]=Hotellide hankija
 Name[it]=Estrattore di hotel
 Name[nl]=Extractor van hotels
 Name[pl]=Wydobywanie hoteli

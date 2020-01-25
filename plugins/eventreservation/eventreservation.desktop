@@ -11,6 +11,7 @@ ServiceTypes=KDENow/Plugin
 Name=Event Extractor
 Name[ca]=Extractor d'esdeveniments
 Name[es]=Extractor de eventos
+Name[et]=Sündmuste hankija
 Name[it]=Estrattore di eventi
 Name[nl]=Extractor van afspraken/gebeurtenissen
 Name[pl]=Wydobywanie wydarzeń

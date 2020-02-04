@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=KDE Now
 Name[ca]=KDE Now
+Name[ca@valencia]=KDE Now
 Name[cs]=KDE Now
 Name[es]=KDE Now
 Name[et]=KDE Now
@@ -16,6 +17,7 @@ Name[x-test]=xxKDE Nowxx
 Name[zh_TW]=KDE Now
 Comment=Provides a common Plasmoid for displaying various kinds of Reservation
 Comment[ca]=Proporciona un plasmoide comú per mostrar classes diferents de reserves
+Comment[ca@valencia]=Proporciona un plasmoide comú per mostrar classes diferents de reserves
 Comment[es]=Proporciona un plasmoide común en el que mostrar varios tipos de reservas
 Comment[et]=Tavaline plasmoid näitamaks eri laadi reserveeringuid.
 Comment[it]=Fornisce un normale plasmoide per visualizzare vari tipi di prenotazioni

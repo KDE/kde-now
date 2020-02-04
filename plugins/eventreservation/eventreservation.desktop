@@ -10,6 +10,7 @@ X-KDE-PluginInfo-License=GPL
 ServiceTypes=KDENow/Plugin
 Name=Event Extractor
 Name[ca]=Extractor d'esdeveniments
+Name[ca@valencia]=Extractor d'esdeveniments
 Name[es]=Extractor de eventos
 Name[et]=Sündmuste hankija
 Name[it]=Estrattore di eventi

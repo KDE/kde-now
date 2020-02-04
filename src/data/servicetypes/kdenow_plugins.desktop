@@ -4,6 +4,7 @@ X-KDE-ServiceType=KDENow/Plugin
 X-KDE-Derived=KPluginInfo
 Name=KDE Now Plugin
 Name[ca]=Connector del KDE Now
+Name[ca@valencia]=Connector del KDE Now
 Name[es]=Complemento KDE Now
 Name[et]=KDE Now plugin
 Name[it]=Estensione KDE Now
